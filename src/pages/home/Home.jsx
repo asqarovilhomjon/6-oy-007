@@ -1,15 +1,16 @@
-import React from "react";
-import Header from "../../Components/Header/Header";
-import Category from "../../Components/Category/Category";
-import Product from "../../Components/Product/Product";
+import React from 'react'
+import Hero from '../../components/Hero/Hero'
+import Categoty from '../../components/Category/Categoty'
+import Product from '../../components/Products/Product'
+
 const Home = () => {
   return (
-    <div>
-      <Header/>
-      <Category />
-      <Product />
-    </div>
-  );
-};
+    <>
+    <Hero/>
+    <Categoty/>
+    <Product/>
+    </>
+  )
+}
 
-export default Home;
+export default Home

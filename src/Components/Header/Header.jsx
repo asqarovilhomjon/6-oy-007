@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/clickhouse.svg";
 
 const API_URL = "https://dummyjson.com";
 
@@ -32,51 +32,30 @@ const Header = () => {
 
   return (
     <>
-      <div className="bg-slate-100 py-5">
+      <div className="bg-slate-30 py-5 px-6">
         <div className="container mx-auto">
           <div className="flex md:flex-row items-center justify-between">
             <div className="mb-4 md:mb-0">
               <img src={logo} alt="Logo" />
             </div>
-            <div className="relative">
-              <input
-                placeholder="Nimani qidiryapsiz?"
-                className="border-none px-2 mr-2 outline-none"
-                type="text"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-              />
-              {suggestions.length > 0 && (
-                <ul className="absolute bg-white border border-gray-300 w-full mt-2 z-10">
-                  {suggestions.map((suggestion) => (
-                    <li
-                      key={suggestion.id}
-                      className="cursor-pointer hover:bg-gray-200 p-2"
-                    >
-                      {suggestion.title}
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </div>
             <div className="hidden md:flex">
-              <ul className="flex flex-col md:flex-row gap-4 md:gap-8">
-                <Link className="hover:text-yellow-600" to={"/"}>
+              <ul className="flex flex-col font-bold md:flex-row gap-4 md:gap-8">
+                <Link className="hover:text-orange-600" to={"/"}>
                   Home
                 </Link>
-                <Link className="hover:text-yellow-600" to={"/About"}>
+                <Link className="hover:text-orange-600" to={"/About"}>
                   Каталог
                 </Link>
-                <Link className="hover:text-yellow-600" to={"/Dostavka"}>
+                <Link className="hover:text-orange-600" to={"/Dostavka"}>
                   Доставка
                 </Link>
-                <li className=" hover:text-yellow-600	">Условия</li>
-                <Link className="hover:text-yellow-600" to={"/Contact"}>
+                <li className=" hover:text-orange-600">Условия</li>
+                <Link className="hover:text-orange-600" to={"/Contact"}>
                   Контакты
                 </Link>
               </ul>
             </div>
-            <div className="flex flex-col items-start md:items-end">
+            <div className="flex flex-col font-normal items-start md:items-end">
               <div className="flex gap-2">
                 <p className="text-xl">+ 375 736 463 64 72</p>
                 <p className="text-xl ml-3 text-gray-500">/</p>

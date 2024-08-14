@@ -1,19 +1,26 @@
-import "./app.css";
-import Header from "./Components/Header/Header";
-import Footer from "./Components/Footer/Footer";
-import Product from "./Components/Product/Product";
-import Category from "./Components/Category/Category";
-import { useState } from "react";
+import { useState } from 'react'
+import Header from './components/Header/Header'
+import { Route, Routes } from 'react-router-dom'
+import Home from './pages/Home/Home'
+import About from './pages/About/About'
+import Dostavka from './pages/Dostavka/Dostavka'
+import Contact from './pages/Contact/Contact'
+import Footer from './components/Footer/Footer'
 
-export function App() {
+function App() {
+
   return (
     <>
-      <Header />
-      <Category />
-      <Product />
-      <Footer />
+      <Header/>
+      <Routes>
+        <Route path="/" element={<Home />}/>
+        <Route path="/About" element={<About/>}/>
+        <Route path="/Dostavka" element={<Dostavka/>}/>
+        <Route path="/Contact" element={<Contact/>}/>
+      </Routes>
+      <Footer/>
     </>
-  );
+  )
 }
 
-export default App;
+export default App

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { MdOutlineAddShoppingCart } from "react-icons/md";
+// import { MdOutlineAddShoppingCart } from "react-icons/md";
 
 const API_URL = "https://dummyjson.com";
 
@@ -25,7 +25,7 @@ const Product = () => {
       })
       .then((res) => {
         setProducts(res.data.products || []);
-        setTotalProducts(res.data.total || 0); // Store the total number of products
+        setTotalProducts(res.data.total || 0);
         setLoading(false);
       })
       .catch((err) => {
@@ -33,8 +33,8 @@ const Product = () => {
         setLoading(false);
       });
   }, [limit, selectedCategory]);
-  
-  // Fetch categories
+
+
   useEffect(() => {
     axios
       .get(`${API_URL}/products/category-list`)
@@ -70,13 +70,13 @@ const Product = () => {
     .map((_, index) => (
       <div
         key={index}
-        className="product__wrapper overflow-hidden group w-[350px] mt-7 relative duration-300 p-4 gap-1 flex flex-col rounded-[30px] animate-pulse bg-gray-200"
+        className="product__wrapper overflow-hidden group w-[300px] mt-7 relative duration-300 p-4 gap-1 flex flex-col rounded-[30px] animate-pulse bg-gray-200"
       >
         <div className="w-full h-[300px] bg-gray-300" />
         <p className="h-4 bg-gray-300 w-1/3 mt-4" />
         <h3 className="h-6 bg-gray-300 w-2/3 mt-2" />
         <p className="h-4 bg-gray-300 w-full mt-2" />
-        <p className="h-8 bg-gray-300 w-1/2 mt-5 mb-10" />
+        <p className="h-8 bg-gray-300 w-1/2 mt-5 mb-2" />
         <div className="flex justify-between">
           <div className="w-1/4 h-6 bg-gray-300" />
           <div className="w-12 h-12 bg-gray-300 rounded-full" />
@@ -87,11 +87,11 @@ const Product = () => {
   const productItem = products.map((product) => (
     <div
       key={product.id}
-      className="product__wrapper overflow-hidden group w-[350px] mt-7 relative duration-300 p-4 gap-1 hover:cursor-pointer flex flex-col rounded-[30px] hover:scale-[1.005] hover:shadow-xl"
+      className="product__wrapper bg-gray-200 overflow-hidden group w-[300px] mt-7 relative duration-300 p-4 gap-1 hover:shadow-lg hover:cursor-pointer flex flex-col rounded-[20px]"
     >
       <img
         src={product.images?.[0]}
-        className="w-full h-[300px] object-contain hover:scale-[1.03]"
+        className="w-full h-[300px] transition duration-[.3s] object-contain hover:scale-[1.03]"
         alt={product.title}
       />
       <p className="text-[red] font-bold">{product.discountPercentage}%</p>
@@ -102,9 +102,27 @@ const Product = () => {
           {product.dimensions.width}x{product.dimensions.height} cm
         </p>
       )}
-      <p className="text-black text-3xl mb-10 mt-5 font-bold">
+      <p className="text-black text-3xl mb-4 mt-2 font-bold">
         {product.price} $
       </p>
+      <div className="product__button w-[270px] items-center flex absolute transition-all duration-300 -bottom-20 left-4 group-hover:bottom-2">
+        <div className="w-1/2 flex items-center gap-3">
+          <button
+            disabled
+            className="flex items-center justify-center border w-[14px] h-[14px] pb-1 border-[#7d7d7d] text-[#7d7d7d] text-1xl rounded-[5px]"
+          >
+            -
+          </button>
+          <p className="text-black">{limit}</p>
+          <button
+            onClick={handleClick}
+            className="flex items-center justify-center pb-1 border w-[14px] h-[14px] border-[#7d7d7d] text-[#7d7d7d] rounded-[5px] text-1xl"
+          >
+            +
+          </button>
+        </div>
+        
+      </div>
     </div>
   ));
 
@@ -114,7 +132,7 @@ const Product = () => {
     </option>
   ));
   return (
-    <div id="Product" className="mt-16 container mx-auto px-14">
+    <div id="Product" className="mt-16 container mx-auto px-4">
       <select
         onChange={(e) => setSelectedCategory(e.target.value)}
         value={selectedCategory}
@@ -123,19 +141,17 @@ const Product = () => {
         <option value="">All</option>
         {categoryOptions}
       </select>
-      <div className="flex flex-wrap justify-between">
+      <div className="flex flex-wrap gap-5 justify-center">
         {loading ? loadingSkeleton : productItem}
       </div>
-      {
-        products.length < totalProducts && (
-          <button
-            className="border-none block mx-auto mt-10 rounded-[20px] py-3 px-6 bg-blue-700 text-white hover:bg-blue-900 active:bg-blue-950"
-            onClick={handleClick}
-          >
-            See more
-          </button>
-        )
-      }
+      {products.length < totalProducts && (
+        <button
+          className="border block mx-auto mt-10 rounded-[20px] py-2 px-2 bg-gray-800 text-white"
+          onClick={handleClick}
+        >
+          See more
+        </button>
+      )}
     </div>
   );
 };
