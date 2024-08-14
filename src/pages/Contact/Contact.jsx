@@ -12,7 +12,7 @@ import card from "../../assets/Union.png";
 const Contact = () => {
   return (
     <>
-      <div className=" container mx-auto mb-[120px] flex items-center justify-between">
+      <div className=" container mx-auto mb-[120px] flex items-center px-5 justify-between">
         <div className="flex  items-center gap-[100px] mt-[30px]">
           <img src={humburger} alt="" />
           <div className="flex items-center border rounded-[30px] p-2 w-[600px]">
@@ -36,12 +36,12 @@ const Contact = () => {
         </div>
       </div>
       <div className="container mx-auto">
-        <p className="text-[36px] text font-[700] mt-[-100px] mb-11">
+        <p className="text-[36px] text px-12 font-[700] mt-[-50px]">
           Контакты
         </p>
         <div className="flex items-center justify-center">
-          <div className="">
-            <div className="grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 items-start">
+          <div className="pb-8">
+            <div className="grid gap-10 grid-cols-1 mt-[-80px] mb-8 font-semibold sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 items-start">
               <div>
                 <p>+ 375 434 847 28 84</p>
                 <p>+ 375 448 473 09 48</p>
@@ -58,7 +58,7 @@ const Contact = () => {
                 <p>Политика конфиденциальности</p>
               </div>
             </div>
-            <div className="flex gap-36 text-[#7d7d7d] mt-9 ml-3">
+            <div className="flex gap-36 text-[#7d7d7d] mt-2 ml-3">
               <FaWeebly className="text-[44px] cursor-pointer" />
               <FaFacebookF className="text-[44px] cursor-pointer" />
               <IoLogoGoogleplus className="text-[44px] cursor-pointer" />

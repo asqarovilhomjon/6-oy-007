@@ -99,7 +99,7 @@ const list = [
 const Mebels = () => {
   return (
     <>
-          <div className=" container mx-auto mb-[120px] flex items-center justify-between">
+          <div className=" container mx-auto mb-[120px] flex items-center justify-between px-5">
         <div className="flex  items-center gap-[100px] mt-[30px]">
           <img src={humburger} alt="" />
           <div className="flex items-center border rounded-[30px] p-2 w-[600px]">
@@ -123,25 +123,25 @@ const Mebels = () => {
         </div>
       </div>
       <div className="container mx-auto">
-        <p className="text-[36px] text font-[700] mt-[-100px] mb-6">Каталог</p>
-        <div className="grid gap-[53px] grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mb-12 items-center justify-center ">
+        <p className="text-[36px] text px-10 font-[700] mt-[-100px] mb-6">Каталог</p>
+        <div className="grid gap-[53px] px-10 grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mb-12 items-center justify-center ">
           {list?.map((el) => (
             <div key={el.id}>
-              <div className="mb-[19px]">
+              <div className="mb-[8px]">
                 <img
-                  className=" duration-300 hover:scale-105 "
+                  className=" duration-300 hover:scale-[1.02] "
                   src={el.url}
                   alt=""
                 />
               </div>
-              <div className="max-w-[250px] flex flex-col gap-[30px] pl-5">
-                <p className="text-[18px] font-[700]">{el.them}</p>
-                <p>{el.title}</p>
-                <p className="max-w-[200px]">{el.desc}</p>
-                <p>{el.info}</p>
-                <p>{el.collection}</p>
-                <p>{el.collection1}</p>
-                <p>{el.price}</p>
+              <div className="max-w-[250px] flex flex-col gap-[10px] pl-5">
+                <p className="text-[18px] hover:text-orange-500 font-[700]">{el.them}</p>
+                <p className=" hover:text-orange-500">{el.title}</p>
+                <p className="max-w-[200px] hover:text-orange-500">{el.desc}</p>
+                <p className=" hover:text-orange-500">{el.info}</p>
+                <p className=" hover:text-orange-500">{el.collection}</p>
+                <p className=" hover:text-orange-500">{el.collection1}</p>
+                <p className=" hover:text-orange-500">{el.price}</p>
               </div>
             </div>
           ))}

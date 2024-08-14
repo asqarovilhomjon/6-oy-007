@@ -9,7 +9,7 @@ import card from "../../assets/Union.png";
 const Dostavka = () => {
   return (
     <>
-        <div className=" container mx-auto mb-[120px] flex items-center justify-between">
+        <div className=" container mx-auto mb-[120px] flex items-center px-5 justify-between">
         <div className="flex  items-center gap-[100px] mt-[30px]">
           <img src={humburger} alt="" />
           <div className="flex items-center border rounded-[30px] p-2 w-[600px]">
@@ -24,7 +24,7 @@ const Dostavka = () => {
           </div>
         </div>
         <div className="flex justify-center gap-[38px] mt-[30px] ">
-          <p className="mr-[40px] text-[rgb(255,153,0)] cursor-pointer">
+          <p className="mr-[40px] text-[rgb(255,153,0)] cursor-pointer hover:text-orange-600">
             Вставить список покупок
           </p>
           <img src={Star} alt="" />
@@ -32,7 +32,7 @@ const Dostavka = () => {
           <img src={user} alt="" />
         </div>
       </div>
-    <div className="container mx-auto">
+    <div className="container px-12 mx-auto">
       <p className="text-[36px] text font-[700] mt-[-100px] mb-11">Доставка</p>
       <div className="grid gap-8 grid-cols-1  sm:grid-cols-1 md:grid-cols-1  lg:grid-cols-2 mb-11">
         <div className="flex flex-col gap-7  sm:gap-5 sm:text-[15px] md:text-[16px]">
