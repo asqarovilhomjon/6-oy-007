@@ -87,7 +87,7 @@ const Product = () => {
   const productItem = products.map((product) => (
     <div
       key={product.id}
-      className="product__wrapper bg-gray-200 overflow-hidden group w-[300px] mt-7 relative duration-300 p-4 gap-1 hover:shadow-lg hover:cursor-pointer flex flex-col rounded-[20px]"
+      className="product__wrapper bg-gray-200 overflow-hidden group w-[300px] mt-7 relative duration-300 p-4 gap-1 hover:scale-[1.02] hover:shadow-lg hover:cursor-pointer flex flex-col rounded-[20px]"
     >
       <img
         src={product.images?.[0]}
@@ -107,19 +107,7 @@ const Product = () => {
       </p>
       <div className="product__button w-[270px] items-center flex absolute transition-all duration-300 -bottom-20 left-4 group-hover:bottom-2">
         <div className="w-1/2 flex items-center gap-3">
-          <button
-            disabled
-            className="flex items-center justify-center border w-[14px] h-[14px] pb-1 border-[#7d7d7d] text-[#7d7d7d] text-1xl rounded-[5px]"
-          >
-            -
-          </button>
-          <p className="text-black">{limit}</p>
-          <button
-            onClick={handleClick}
-            className="flex items-center justify-center pb-1 border w-[14px] h-[14px] border-[#7d7d7d] text-[#7d7d7d] rounded-[5px] text-1xl"
-          >
-            +
-          </button>
+          
         </div>
         
       </div>
@@ -146,7 +134,7 @@ const Product = () => {
       </div>
       {products.length < totalProducts && (
         <button
-          className="border block mx-auto mt-10 rounded-[20px] py-2 px-2 bg-gray-800 text-white"
+          className="border block mx-auto mt-10 rounded-[10px] py-2 px-8 hover:bg-blue-900 hover:scale-[1.03] active:scale-[.99] bg-blue-700 text-white"
           onClick={handleClick}
         >
           See more
